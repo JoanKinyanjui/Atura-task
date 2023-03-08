@@ -22,6 +22,7 @@ function Explore() {
   const [address,setAddress]=useState();
   const [symbol,setSymbol]=useState();
   const [tokenStandards,setTokenStandards]=useState();
+  const [supply,setSupply]=useState();
 
   const [nftsData, setNftsData] = useState([]);
 
@@ -39,20 +40,21 @@ function Explore() {
     const { nfts } = await alchemy.nft.getNftsForContract(contractAddress, {
       omitMetadata: omitMetadata,
     });
-    console.log("sdsdd", nfts);
 
+    console.log(nfts)
     const allnftsData = await Promise.all(
       nfts.map(function (nft) {
         const address = nft.contract.address;
         const OpenseaUrl = `https://testnets.opensea.io/assets/goerli/${address}/${nft.tokenId}`;
-        console.log(nft);
+        // console.log(nft);
 
         const allNfts = {
           Name: nft.contract.name,
           OpenseaUrl,
+          Supply: nft.contract.totalSupply,
           tokenId: nft.tokenId,
           Image: nft.media[0].thumbnail,
-          Description: nft.description,
+          Description: nft.rawMetadata.attributes[0].value,
           address,
           tokenStandards: nft.tokenType,
           Symbol: nft.contract.symbol,
@@ -107,12 +109,13 @@ function Explore() {
                 handleOpen(nft);
                 setName(nft.Name);
                 setImage(nft.Image);
-                setAddress(nft.address);
+                setAddress(nft.address.slice(0,8));
                 setDescription(nft.Description);
                 setPermalink(nft.OpenseaUrl);
                 setSymbol(nft.Symbol);
                 setTokenStandards(nft.tokenStandards);
                 setTokenId(nft.tokenId);
+                setSupply(nft.Supply);
               }}
             >
               <div className="explore-card-img">
@@ -145,6 +148,7 @@ function Explore() {
               address={address}
               permalink={permalink}
               tokenId={tokenId}
+              supply={supply}
               
             /> 
           </Grid>

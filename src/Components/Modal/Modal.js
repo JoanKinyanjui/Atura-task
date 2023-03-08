@@ -15,11 +15,8 @@ const style = {
   outline: 0,
 };
 
-export default function BasicModal({ open, handleClose, name,img,description,tokenStandards,symbol,address,permalink,tokenId }) {
+export default function BasicModal({ open, handleClose, name,img,description,tokenStandards,symbol,address,permalink,tokenId ,supply}) {
  
-  function slash(data){
-   return 
-  }
 
   return (
     <div>
@@ -38,7 +35,7 @@ export default function BasicModal({ open, handleClose, name,img,description,tok
               </div>
               <div className=" modal-one-content grid items-center">
                 <p className="font-medium text-lg md:text-xl">{name}</p>
-                <p>Price </p>
+                <p>Total Supply : {supply} </p>
                 <Link to={permalink}>
                   <button className="Buy-now">Buy Now</button>
                 </Link>
@@ -57,8 +54,7 @@ export default function BasicModal({ open, handleClose, name,img,description,tok
                 </div>
                 <div className="flex justify-between w-full ">
                   <p className="text-neutral-700">Contract Address</p>
-                  <p className="text-neutral-900">{address.slice(0,5) 
-                  +'...' +address.slice(-4,-1)}</p>
+                  <p className="text-neutral-900">{address}...</p>
                 </div>
                 <div className="flex justify-between w-full ">
                   <p className="text-neutral-700">Token Id</p>
