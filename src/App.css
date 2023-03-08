@@ -1,5 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  background-color:  #121117;
 }
 
 .App-logo {

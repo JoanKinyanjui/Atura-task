@@ -1,0 +1,58 @@
+.Explore{
+    width: 100vw;
+    height: max-content;
+    color: rgb(95, 93, 93);
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+}
+.explore-grid{
+    width: 100% !important;
+    /* background-color: aquamarine; */
+    border-radius: 10px 10px 0px 0px;
+}
+.explore-card{
+    width: 75% !important;
+    height: 45vh;
+    justify-content: center;
+    align-items: center;
+}
+.explore-card-img{
+    height: 75%;
+}
+.explore-card-details{
+    height: 25%;
+    background-color: #1e1e1f;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 2px 3px 3px rgb(37, 37, 37);
+}
+.explore-card-img-spec{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0px 0px;
+}
+.explore-card:hover{
+    width: 80% !important;
+    height: 50vh;
+}
+@media only screen and (max-width: 1200px) {
+    .explore-card{
+        width: 90% !important;
+        height: 50vh;
+    }
+    .explore-card:hover{
+        width: 100% !important;
+        height: 55vh;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .explore-card{
+        width: 90% !important;
+        height: 50vh;
+    }
+    .explore-card-details{
+        border-radius: 0px 0px 10px 10px;
+    }
+    .explore-card-img-spec{
+        border-radius: 10px 10px 0px 0px;
+    }
+}

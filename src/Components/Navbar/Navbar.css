@@ -1,0 +1,32 @@
+.Navbar{
+background-color: #121117;
+color: white ;
+width: 100vw;
+height: 95px;
+position: fixed;
+top: 0;
+}
+.logo-img{
+    width: 46px;
+    height: 55px;
+}
+.wallet-connect{
+    width: 200px;
+    height: 47px;
+    padding: 5px 20px;
+    border: 2px solid white;
+    border-radius: 50px;
+}
+@media only screen and (max-width: 768px) {
+ .logo-img{
+    width: 40px;
+    height: 49px;
+}
+.wallet-connect{
+    width: 180px;
+    height: 40px;
+    border-radius: 45px;
+    font-size: medium;
+    padding: 3px 18px;
+}
+}

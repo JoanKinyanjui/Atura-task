@@ -1,0 +1,40 @@
+.Hero{
+    width: 100vw;
+    height: 60vh;
+    position: relative;
+    background-image:url('https://netstorm-react.theme-land.com/img/inner_bg.jpg') ;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    background-repeat: no-repeat;
+}
+.explore-page-title{
+    width: 100vw;
+    height: 60vh;
+    font-family: System;
+    /* position: fixed; */
+}
+@media only screen and (max-width: 1200px) {
+    .Hero{
+        height: 40vh;
+    }
+    .explore-page-title{
+        height: 40vh;
+    }
+    }
+ @media only screen and (max-width: 920px) {
+        .Hero{
+            height: 40vh;
+        }
+        .explore-page-title{
+            height: 40vh;
+        }
+        }
+@media only screen and (max-width: 420px) {
+    .Hero{
+        height: 40vh;
+    }
+    .explore-page-title{
+        height: 40vh;
+    }
+    }
