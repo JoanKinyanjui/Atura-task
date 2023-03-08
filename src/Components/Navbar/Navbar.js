@@ -11,7 +11,7 @@ function Navbar() {
      <img src='https://netstorm-react.theme-land.com/img/logo.png' className='logo-img'/>
    </div>
    <div > 
-     <button className=' wallet-connect flex justify-between items-center '><IoWalletOutline  className='text-xl md:text-2xl'/> <p>Wallet Connect</p></button> 
+     <button className=' wallet-connect flex justify-between items-center  '><IoWalletOutline  className='text-lg md:text-2xl'/> <p>Wallet Connect</p></button> 
    </div>
 </div>
 
