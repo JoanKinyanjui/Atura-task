@@ -1,4 +1,4 @@
-import { Grid, Modal } from "@mui/material";
+import { Grid, Modal, Skeleton } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import "./Explore.css";
@@ -12,7 +12,6 @@ const config = {
 const alchemy = new Alchemy(config);
 
 function Explore() {
-  const [nfts, setNfts] = useState([]);
   const [open, setOpen] = React.useState(false);
   const [name, setName] = useState();
   const [image,setImage]=useState();
@@ -41,7 +40,7 @@ function Explore() {
       omitMetadata: omitMetadata,
     });
 
-    console.log(nfts)
+    // console.log(nfts)
     const allnftsData = await Promise.all(
       nfts.map(function (nft) {
         const address = nft.contract.address;
@@ -73,27 +72,19 @@ function Explore() {
   // Fetch  NFT's from opensea listings
   useEffect(() => {
     fetchNft();
-    const options = { method: "GET", headers: { accept: "application/json" } };
 
-    fetch(
-      "https://testnets-api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        setNfts(response.assets);
-      })
-      .catch((err) => console.error(err));
   }, []);
 
   return (
     <div className="Explore  grid justify-items-stretch ">
+
+{(nftsData.length !==0) ? 
       <Grid
         container
         maxWidth="xl"
         className="grid  place-content-center justify-self-center"
-      >
-        {nftsData.map((nft, index) => (
+      >       
+ {nftsData.map((nft, index) => (
           <Grid
             item
             xs={8}
@@ -153,7 +144,18 @@ function Explore() {
             /> 
           </Grid>
         ))}
+
       </Grid>
+       : 
+    <div className="flex place-content-center h-full items-center">
+         <Skeleton
+          sx={{ bgcolor: 'grey.900' }}
+          variant="rectangular"
+          width={200}
+          height={450}
+       />
+    </div>
+       }
     </div>
   );
 }
