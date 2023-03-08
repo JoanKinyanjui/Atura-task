@@ -15,9 +15,19 @@ const style = {
   outline: 0,
 };
 
-export default function BasicModal({ open, handleClose, name,img,description,tokenStandards,symbol,address,permalink,tokenId ,supply}) {
- 
-
+export default function BasicModal({
+  open,
+  handleClose,
+  name,
+  img,
+  description,
+  tokenStandards,
+  symbol,
+  address,
+  permalink,
+  tokenId,
+  supply,
+}) {
   return (
     <div>
       <Modal
@@ -50,7 +60,9 @@ export default function BasicModal({ open, handleClose, name,img,description,tok
                 </div>
                 <div className="flex justify-between w-full ">
                   <p className="text-neutral-700">Token Standard</p>
-                  <p className="text-neutral-900 break-words">{tokenStandards}</p>
+                  <p className="text-neutral-900 break-words">
+                    {tokenStandards}
+                  </p>
                 </div>
                 <div className="flex justify-between w-full ">
                   <p className="text-neutral-700">Contract Address</p>
