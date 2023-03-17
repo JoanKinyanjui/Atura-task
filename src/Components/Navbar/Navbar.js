@@ -6,7 +6,7 @@ function Navbar() {
   return (
 <div className='Navbar'>
         
-<div className='flex h-full w-full justify-between items-center w-11/12 md:w-5/6 place-content-center mx-auto'>
+<div className='flex h-full justify-between items-center w-10/12 md:w-5/6 place-content-center mx-auto'>
 <div>   
      <img src='https://netstorm-react.theme-land.com/img/logo.png' className='logo-img'/>
    </div>
