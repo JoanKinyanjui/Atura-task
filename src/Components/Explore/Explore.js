@@ -6,7 +6,7 @@ import BasicModal from "../Modal/Modal";
 import { Alchemy, Network } from "alchemy-sdk";
 
 const config = {
-  apiKey: "rqXs4kx3cNi2dYH3ywe_zZaXxunU_2B_",
+  apiKey:"jBb1eGN9hpw-LJkN4Vb10qGxq-Gqa-Sr",
   network: Network.ETH_GOERLI,
 };
 const alchemy = new Alchemy(config);
