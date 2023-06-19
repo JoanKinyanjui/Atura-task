@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import {IoWalletOutline} from 'react-icons/io5'
 
-function Navbar() {
+function Navbar({connectWallet,walletConnect}) {
   return (
 <div className='Navbar'>
         
@@ -11,7 +11,7 @@ function Navbar() {
      <img src='https://netstorm-react.theme-land.com/img/logo.png' className='logo-img'/>
    </div>
    <div > 
-     <button className=' wallet-connect flex justify-between items-center  '><IoWalletOutline  className='text-lg md:text-2xl'/> <p>Wallet Connect</p></button> 
+     <button className=' wallet-connect flex justify-between items-center '  onClick={connectWallet} ><IoWalletOutline  className='text-lg md:text-2xl'/> <p>{walletConnect ? "Connected" : "Connect Wallet"}</p></button> 
    </div>
 </div>
 
